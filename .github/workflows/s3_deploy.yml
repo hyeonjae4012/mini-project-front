@@ -44,4 +44,4 @@ jobs:
         run: |
           aws s3 sync --exact-timestamps --delete build/ s3://$FRONT_HOSTING_BUCKET
         env:
-          AWS_STORAGE_BUCKET: ${{ secrets.FRONT_HOSTING_BUCKET }}
+          FRONT_HOSTING_BUCKET: ${{ secrets.FRONT_HOSTING_BUCKET }}
