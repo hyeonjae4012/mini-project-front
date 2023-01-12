@@ -3,17 +3,17 @@ import './App.css';
 
 function App() {
 
-  const upsertItem = () => {
-    console.log("upsertItem")
-  }
+  // const upsertItem = () => {
+  //   console.log("upsertItem")
+  // }
 
-  const getItem = () => {
-    console.log("getItem")
-  }
+  // const getItem = () => {
+  //   console.log("getItem")
+  // }
 
-  const deleteItem = () => {
-    console.log("deleteItem")
-  }
+  // const deleteItem = () => {
+  //   console.log("deleteItem")
+  // }
 
 
   return (
