@@ -2,8 +2,22 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const upsertItem = () => {
+    console.log("upsertItem")
+  }
+
+  const getItem = () => {
+    console.log("getItem")
+  }
+
+  const deleteItem = () => {
+    console.log("deleteItem")
+  }
+
+
   return (
-    <div className="App">
+    <div className="TEST">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
