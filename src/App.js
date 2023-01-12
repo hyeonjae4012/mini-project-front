@@ -7,7 +7,7 @@ function App() {
 
   const createItem = () => {
     console.log("createItem");
-    axios.POST(`${base_url}/test`, {
+    axios.post(`${base_url}/test`, {
       Key: "test"
     })
     .then((output) => {
