@@ -3,8 +3,7 @@ import axios from 'axios';
 
 function App() {
 
-  const base_url = "hyeonjae.classmethod.info"
-
+  const base_url = "2qop51h7h7.execute-api.ap-northeast-1.amazonaws.com/prod"
   const createItem = () => {
     console.log("createItem");
     axios.post(`${base_url}/test`, {
