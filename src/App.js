@@ -6,7 +6,7 @@ function App() {
   const createItem = () => {
     console.log("createItem");
     axios.post(`/prod/test`, {
-      Key: "test"
+      TestPartitionKey: "test"
     })
     .then((output) => {
       console.log(output);
@@ -19,7 +19,7 @@ function App() {
   const updateItem = () => {
     console.log("updateItem");
     axios.put(`/prod/test`, {
-      Key: "test"
+      TestPartitionKey: "test"
     })
     .then((output) => {
       console.log(output);
@@ -32,7 +32,7 @@ function App() {
   const getItem = () => {
     console.log("getItem");
     axios.get(`/prod/test`, {
-      Key: "test"
+      TestPartitionKey: "test"
     })
     .then((output) => {
       console.log(output);
