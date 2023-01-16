@@ -3,10 +3,9 @@ import axios from 'axios';
 
 function App() {
 
-  const base_url = "hyeonjae.classmethod.info/api"
   const createItem = () => {
     console.log("createItem");
-    axios.post(`${base_url}/test`, {
+    axios.post(`/api/test`, {
       Key: "test"
     })
     .then((output) => {
@@ -19,7 +18,7 @@ function App() {
 
   const updateItem = () => {
     console.log("updateItem");
-    axios.put(`${base_url}/test`, {
+    axios.put(`/api/test`, {
       Key: "test"
     })
     .then((output) => {
@@ -32,7 +31,7 @@ function App() {
 
   const getItem = () => {
     console.log("getItem");
-    axios.get(`${base_url}/test`, {
+    axios.get(`/api/test`, {
       Key: "test"
     })
     .then((output) => {
@@ -45,7 +44,7 @@ function App() {
 
   const deleteItem = () => {
     console.log("deleteItem");
-    axios.delete(`${base_url}/test`, {
+    axios.delete(`/api/test`, {
       Key: "test"
     })
     .then((output) => {
