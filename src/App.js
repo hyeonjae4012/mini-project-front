@@ -5,7 +5,7 @@ function App() {
 
   const createItem = () => {
     console.log("createItem");
-    axios.post(`/api/test`, {
+    axios.post(`/prod/test`, {
       Key: "test"
     })
     .then((output) => {
@@ -18,7 +18,7 @@ function App() {
 
   const updateItem = () => {
     console.log("updateItem");
-    axios.put(`/api/test`, {
+    axios.put(`/prod/test`, {
       Key: "test"
     })
     .then((output) => {
@@ -31,7 +31,7 @@ function App() {
 
   const getItem = () => {
     console.log("getItem");
-    axios.get(`/api/test`, {
+    axios.get(`/prod/test`, {
       Key: "test"
     })
     .then((output) => {
@@ -44,7 +44,7 @@ function App() {
 
   const deleteItem = () => {
     console.log("deleteItem");
-    axios.delete(`/api/test`, {
+    axios.delete(`/prod/test`, {
       Key: "test"
     })
     .then((output) => {
