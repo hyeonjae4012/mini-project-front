@@ -5,7 +5,7 @@ function App() {
 
   const createItem = () => {
     console.log("createItem");
-    axios.post(`/prod/test`, {
+    axios.post(`/prod/api/test`, {
       TestPartitionKey: "test"
     })
     .then((output) => {
@@ -18,7 +18,7 @@ function App() {
 
   const updateItem = () => {
     console.log("updateItem");
-    axios.put(`/prod/test`, {
+    axios.put(`/prod/api/test`, {
       TestPartitionKey: "test"
     })
     .then((output) => {
@@ -31,7 +31,7 @@ function App() {
 
   const getItem = () => {
     console.log("getItem");
-    axios.get(`/prod/test`, {
+    axios.get(`/prod/api/test`, {
       TestPartitionKey: "test"
     })
     .then((output) => {
@@ -44,7 +44,7 @@ function App() {
 
   const deleteItem = () => {
     console.log("deleteItem");
-    axios.delete(`/prod/test`, {
+    axios.delete(`/prod/api/test`, {
       Key: "test"
     })
     .then((output) => {
