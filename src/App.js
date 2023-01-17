@@ -32,7 +32,9 @@ function App() {
   const getItem = () => {
     console.log("getItem");
     axios.get(`/api/test`, {
-      TestPartitionKey: "test"
+      params: {
+        TestPartitionKey: "test"
+      }
     })
     .then((output) => {
       console.log(output);
@@ -45,7 +47,9 @@ function App() {
   const deleteItem = () => {
     console.log("deleteItem");
     axios.delete(`/api/test`, {
-      Key: "test"
+      params: {
+        TestPartitionKey: "test"
+      }
     })
     .then((output) => {
       console.log(output);
