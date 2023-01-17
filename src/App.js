@@ -31,7 +31,7 @@ function App() {
 
   const getItem = () => {
     console.log("getItem");
-    axios.get(`/api/test?TestPartitionKey=test`, {
+    axios.get(`/api/test`, {
       params: {
         TestPartitionKey: "test"
       }
