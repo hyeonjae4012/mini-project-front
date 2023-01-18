@@ -5,7 +5,7 @@ function App() {
 
   const createItem = () => {
     console.log("createItem");
-    axios.post(`https://cacby8ooc7.execute-api.ap-northeast-1.amazonaws.com/prod/api/test`, {
+    axios.post(`/api/test`, {
       TestPartitionKey: "test"
     })
     .then((output) => {
