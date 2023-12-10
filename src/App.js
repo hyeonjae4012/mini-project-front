@@ -33,7 +33,7 @@ function App() {
     console.log("getItem");
     axios.get(`/api/test`, {
       params: {
-        testQueryString: "test"
+        TestPartitionKey: "test"
       }
     })
     .then((output) => {
