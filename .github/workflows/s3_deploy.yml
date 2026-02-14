@@ -1,18 +1,16 @@
-name: s3 deploy
+name: Frontend Deploy
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'mini-project-front/**'
 
 jobs:
-  aws_cdk:
-    name: Running Ubutu image
-    runs-on: ubuntu-18.04
-
-    strategy:
-      matrix:
-        node-version: [16.x]
+  deploy:
+    name: Deploy to S3
+    runs-on: ubuntu-latest
 
     permissions:
       id-token: write
@@ -20,27 +18,31 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: mini-project-front/package-lock.json
 
       - name: Configure AWS credentials from IAM Role
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: ${{ secrets.AWS_OIDC_ROLE_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Install Dependencies
+        working-directory: mini-project-front
         run: npm ci
 
-      - name: Build Code
-        run: |
-          npm run build
+      - name: Build React App
+        working-directory: mini-project-front
+        run: npm run build
 
-      - name: Upload S3
+      - name: Upload to S3
+        working-directory: mini-project-front
         run: |
           aws s3 sync --exact-timestamps --delete build/ s3://$FRONT_HOSTING_BUCKET
         env:
